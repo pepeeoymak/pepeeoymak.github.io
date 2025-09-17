@@ -1,19 +1,56 @@
+<!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Türk Kedi 108</title>
+  <title>Rastgele Kedi</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: auto;
-      padding: 20px;
+      font-family: sans-serif;
+      text-align: center;
+      background-color: #fafafa;
+      margin-top: 50px;
+    }
+    img {
+      width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
-  <h1>108</h1>
-  <p>Bu sayfa, sade bir içerik sayfasıdır.</p>
-  <p>İstediğiniz metni buraya yazabilirsiniz.</p>
+
+  <h1 id="title">Kedi Galerisi</h1>
+  <img id="randomImage" src="" alt="Rastgele Kedi">
+  <p id="description"></p>
+
+  <script>
+    // Rastgele resim ve açıklama listesi
+    const data = [
+      {
+        image: "https://placekitten.com/400/300",
+        title: "Uykucu Kedi",
+        desc: "Bu kedi gün boyunca miskinlik yapıyor."
+      },
+      {
+        image: "https://placekitten.com/401/300",
+        title: "Meraklı Kedi",
+        desc: "Yeni şeyler keşfetmeyi çok seviyor."
+      },
+      {
+        image: "https://placekitten.com/402/300",
+        title: "Sevimli Kedi",
+        desc: "Sana sarılmak için sabırsızlanıyor!"
+      }
+    ];
+
+    // Rastgele veri seç
+    const randomItem = data[Math.floor(Math.random() * data.length)];
+
+    // HTML'e uygula
+    document.getElementById("randomImage").src = randomItem.image;
+    document.getElementById("title").textContent = randomItem.title;
+    document.getElementById("description").textContent = randomItem.desc;
+  </script>
+
 </body>
 </html>
