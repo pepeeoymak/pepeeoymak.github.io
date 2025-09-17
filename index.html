@@ -64,24 +64,17 @@
   </div>
 
   <script>
-    // Örnek veri dizisi — resim URL'leri yerine placeholder ya da kendi kaynaklarını kullanabilirsin
+    // 9 tane resim ve açıklama
     const cats = [
-      {
-        caption: "essek sipam 1",
-        image: "WhatsApp Görsel 2025-09-17 saat 12.00.02_287d510f.jpg"
-      },
-      {
-        caption: "İkinci kedi açıklaması",
-        image: "resim2.jpg"
-      },
-      {
-        caption: "Üçüncü kedi açıklaması",
-        image: "resim3.jpg"
-      },
-      {
-        caption: "Dördüncü kedi açıklaması",
-        image: "resim4.jpg"
-      }
+      { image: "resimler/kedi1.jpg", caption: "1 - Uykucu kedi" },
+      { image: "resimler/kedi2.jpg", caption: "2 - Meraklı kedi" },
+      { image: "resimler/kedi3.jpg", caption: "3 - Tembel kedi" },
+      { image: "resimler/kedi4.jpg", caption: "4 - Uçan kedi" },
+      { image: "resimler/kedi5.jpg", caption: "5 - Minik kedi" },
+      { image: "resimler/kedi6.jpg", caption: "6 - Komik bakan kedi" },
+      { image: "resimler/kedi7.jpg", caption: "7 - Tüylü kedi" },
+      { image: "resimler/kedi8.jpg", caption: "8 - Zıplayan kedi" },
+      { image: "resimler/kedi9.jpg", caption: "9 - Poz veren kedi" }
     ];
 
     let currentIndex = 0;
@@ -110,15 +103,16 @@
     });
 
     randomBtn.addEventListener("click", function() {
-      let rand = Math.floor(Math.random() * cats.length);
+      let rand;
+      do {
+        rand = Math.floor(Math.random() * cats.length);
+      } while (rand === currentIndex);
       currentIndex = rand;
       updateDisplay();
     });
 
-    // Sayfa yüklendiğinde ilk içerik gösterilsin
     window.onload = updateDisplay;
   </script>
 
 </body>
 </html>
-
